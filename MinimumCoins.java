@@ -19,7 +19,7 @@ public class MinimumCoins {
 	            System.out.println("Enter the cost of "+name+":");
 	            cost= sc.nextInt();
 	            sc.nextLine();
-	            if(cost<0)
+	            if(cost<=0)
 	            {
 	                System.out.println("Cost can't be negative or zero, please enter the correct cost");
 	            }
