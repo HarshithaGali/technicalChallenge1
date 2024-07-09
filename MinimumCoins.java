@@ -6,8 +6,15 @@ public class MinimumCoins {
 	         
 	         HashMap<String, Integer> h = new HashMap<String, Integer>();
 	         Scanner sc=new Scanner(System.in);
+	         int n=0;
+	         while(n<=0) {
 	         System.out.println("Enter the number of items you want to buy:");
-	         int n=sc.nextInt();
+	         n=sc.nextInt();
+	         if(n<=0)
+	         {
+	        	 System.out.println("Number of items can't be negative or zero, please enter the correct number");
+	         }
+	         }
 	         sc.nextLine();
 	         for(int i=0; i<n;i++)
 	         {
@@ -101,5 +108,4 @@ public class MinimumCoins {
 	         }
 	         System.out.println("Minimum number of coins: "+totalCoins);
 	     } 
-	     
 	}
