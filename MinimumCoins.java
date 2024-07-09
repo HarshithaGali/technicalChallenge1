@@ -8,15 +8,17 @@ public class MinimumCoins {
 	         Scanner sc=new Scanner(System.in);
 	         System.out.println("Enter the number of items you want to buy:");
 	         int n=sc.nextInt();
+	         sc.nextLine();
 	         for(int i=0; i<n;i++)
 	         {
 	            System.out.println("Enter the name of item "+(i+1)+":");
-	            String name= sc.next ();
+	            String name= sc.nextLine ();
 	            int cost=0;
 	            while(cost<=0)
 	            {
 	            System.out.println("Enter the cost of "+name+":");
 	            cost= sc.nextInt();
+	            sc.nextLine();
 	            if(cost<0)
 	            {
 	                System.out.println("Cost can't be negative or zero, please enter the correct cost");
@@ -30,15 +32,16 @@ public class MinimumCoins {
 	         int sum=totalPrice(h);
 	         System.out.println("The total price of items is:"+sum);
 	         int paying=0;
-	         if(paying<0)
-	         {
-	             System.out.println("Please enter a valid cost, it cant be negative");
-	         }
+	         
 	         while(paying<sum)
 	         {
 	         System.out.println("How much will you be paying:");
 	         paying=sc.nextInt();
-	         if(paying<sum)
+	         if(paying<0)
+	         {
+	             System.out.println("Please enter a valid cost, it cant be negative");
+	         }
+	         else if(paying<sum)
 	         {
 	             sum=sum-paying;
 	             System.out.println("You need to pay "+sum +" more");
@@ -97,9 +100,6 @@ public class MinimumCoins {
 	             }
 	         }
 	         System.out.println("Minimum number of coins: "+totalCoins);
-	     }
-	     
-	     
-	    
+	     } 
 	     
 	}
